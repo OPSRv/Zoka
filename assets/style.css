@@ -21,12 +21,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow: hidden; */
+  overflow-x: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .container {
   width: 100%;
   max-width: var(--container);
-  /* padding: 20px; */
 }
 
 .header {
@@ -646,12 +647,6 @@ p {
 
 /** get started us */
 
-.get_started_us_wrapper {
-  max-width: 1180px;
-  width: 100%;
-  background: rgba(71, 71, 71, 0.136);
-}
-
 .get_started_us {
   background-color: var(--block-footer);
   height: 600px;
@@ -659,34 +654,43 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: clamp(1.25rem, -0.701rem + 9.76vw, 6.25rem);
   position: relative;
-  margin-left: 70px;
+  width: 100%;
+  margin-bottom: 100px;
 }
-.get_started_us > img {
+
+.sun_boy {
   position: absolute;
   top: -70px;
   right: -70px;
   width: clamp(18.75rem, 14.018rem + 23.66vw, 30.875rem);
+  z-index: 5;
+  display: none;
 }
 
 .get_started_us_text {
   color: var(--white-color);
-  height: 325px;
+  min-height: 325px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 630px;
   z-index: 10;
+  align-items: center;
+  padding: 10px;
 }
+
 .get_started_us_text h3 {
   font-weight: 600;
   font-size: 64px;
+  text-align: center;
 }
+
 .get_started_us_text p {
   opacity: 0.8;
   font-size: 18px;
   line-height: 27px;
+  text-align: center;
 }
 
 .get_started_us_text > .btn {
@@ -699,11 +703,49 @@ p {
 .get_started_us_text > .btn .arrow_wrap {
   background: var(--btn-color-grey);
 }
+/** FOOTER */
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #3c3842;
+}
+.crafted {
+}
+.footer_nav_list {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+}
+.footer_nav_list li > a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer_nav_list li > a:hover {
+  opacity: 0.8;
+}
+.footer_nav_list li > a:active {
+  transform: scale(0.98);
+}
 @media screen and (min-width: 576px) {
   .our_works_photo_item > img {
     border-radius: 10%;
     height: var(--height-photo_item);
+  }
+  .get_started_us_text {
+    align-items: start;
+    padding-left: clamp(1.25rem, -0.701rem + 9.76vw, 6.25rem);
+  }
+
+  .get_started_us_text h3 {
+    text-align: start;
+  }
+
+  .get_started_us_text p {
+    text-align: start;
   }
 }
 
@@ -783,5 +825,18 @@ p {
     position: absolute;
     right: 0;
     bottom: -40px;
+  }
+  .sun_boy {
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: clamp(18.75rem, 14.018rem + 23.66vw, 30.875rem);
+    z-index: 5;
+    display: block;
+  }
+
+  .footer {
+    justify-content: space-between;
+    flex-flow: row wrap;
   }
 }
